@@ -1,6 +1,13 @@
 $(document).ready(function() {
-    var _on = 'images/Light_On_L.png';
-    var _off = 'images/Light_Off_L.png';
+    var mw = window.matchMedia("(min-width: 570px)");
+    var mh = window.matchMedia("(min-height: 570px)");
+    if (mw.matches && mh.matches) {
+        var _on = 'images/Light_On_L.png';
+        var _off = 'images/Light_Off_L.png';
+    } else {
+        var _on = 'images/Light_On.png';
+        var _off = 'images/Light_Off.png';
+    }
     reset(_off);
     randomOn(_on);
     $('#reset').click(function() {
